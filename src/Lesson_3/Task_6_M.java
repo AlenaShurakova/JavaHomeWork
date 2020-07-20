@@ -1,3 +1,5 @@
+package Lesson_3;
+
 import java.util.Scanner;
 
 /*
@@ -5,43 +7,30 @@ import java.util.Scanner;
 ли его последняя цифра семеркой. Определите, является ли число четным.
 * */
 public class Task_6_M {
-    public static void main(String [] args)
-    {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Введите число:");
         int number = input.nextInt();
         input.close();
         int amountOfNumbers = (Integer.toString(number)).length();
-        if(number<0)
-        {
-            amountOfNumbers-=1;
+        if (number < 0) {
+            amountOfNumbers -= 1;
         }
-        if(amountOfNumbers==3)
-        {
+        if (amountOfNumbers == 3) {
             System.out.println("Число трехзначное");
-        }
-        else
-        {
+        } else {
             System.out.println("Число не трехзначное");
         }
-        if ((number-7)%10==0)
-        {
+        if (number % 10 == 7) {
             System.out.println("Число заканчивается на 7");
-        }
-        else
-        {
+        } else {
             System.out.println("Число не заканчивается на 7");
         }
-        if (number==0)
-        {
+        if (number == 0) {
             System.out.println("Число не является ни четным, ни нечетным");
-        }
-        else if (number%2==0)
-        {
+        } else if (number % 2 == 0) {
             System.out.println("Число четное");
-        }
-        else
-        {
+        } else {
             System.out.println("Число нечетное");
         }
     }
