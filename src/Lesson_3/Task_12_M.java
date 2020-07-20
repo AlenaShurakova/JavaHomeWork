@@ -14,7 +14,7 @@ public class Task_12_M {
         scanner.close();
         int sumOfNumbers = 0;
         int numberCounter = 0;
-        int numberIncrement = 0;
+        int numberIncrement = 1;
         while (numberCounter < inputtedNumber) {
             if (numberIncrement % 3 == 0) {
                 sumOfNumbers += numberIncrement;
