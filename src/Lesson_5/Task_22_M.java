@@ -5,18 +5,18 @@ package Lesson_5;
 страницу.
 * */
 
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Task_22_M {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String alena = "0xaaaaaaaa";
-        scanner.close();
-        Pattern regexp = Pattern.compile("[0]{1}[x]{1}[a-f0-9]{1,9}[a-f]{0,6}");
-        Matcher m = regexp.matcher(alena.toLowerCase());
-        boolean b = m.matches();
-        System.out.println(b);
+        String number = "0x1FfF is the first number 0x111AF is the second number";
+        Pattern regexp = Pattern.compile("[0]{1}[x]{1}[a-fA-F0-9]{1,9}[a-fA-F]{0,6}");
+        Matcher matcher = regexp.matcher(number);
+        int counter=1;
+        while(matcher.find()){
+            System.out.println(counter+" number:"+matcher.group());
+            counter++;
+        }
     }
 }
