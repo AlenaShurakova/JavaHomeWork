@@ -1,4 +1,4 @@
-/*
+package Lesson_3;/*
 *Вычислить: 1+2+4+8+...+256*/
 
 public class Task_3 {

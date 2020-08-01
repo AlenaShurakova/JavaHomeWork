@@ -1,12 +1,13 @@
-/*Определите сумму элементов одномерного массива, расположенных между
-минимальным и максимальным значениями.
+package Lesson_3;
+
+/*
+* Создать массив оценок произвольной длины, вывести максимальную и
+минимальную оценку, её (их) номера.
 * */
-public class Task_16_M {
-    public static void main(String args[]) {
-        int sizeOfMassive =0;
-        while (sizeOfMassive==0) {
-            sizeOfMassive=(int) (Math.random() * 10);
-        }
+public class Task_14_M {
+    public static  void main (String [] args)
+    {
+        int sizeOfMassive = (int) (Math.random() * 10);
         int [] massive = new int [sizeOfMassive];
         for (int i = 0; i<massive.length;i++)
         {
@@ -49,25 +50,5 @@ public class Task_16_M {
         }
         System.out.println("\nМаксимальная оценка: " +max +", ее номер:"+maxIndex);
         System.out.println("Минимальная оценка: " +min +", ее номер:"+minIndex);
-        int sumOfElements=0;
-        if (minIndex+1<maxIndex){
-            for (int i=minIndex;i<maxIndex-1;i++)
-            {
-                sumOfElements+=massive[i];
-            }
-            System.out.println("Сумма элементов между максимальным и минимальным элементами равна: "+ sumOfElements);
-        }
-        else if (minIndex>maxIndex+1)
-        {
-            for (int i=maxIndex;i<minIndex-1;i++)
-            {
-                sumOfElements+=massive[i];
-            }
-            System.out.println("Сумма элементов между максимальным и минимальным элементами равна: "+ sumOfElements);
-        }
-        else {
-            System.out.println("Между максимальным и минимальным элементами нет других элементов");
-        }
     }
 }
-
