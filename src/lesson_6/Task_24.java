@@ -1,4 +1,4 @@
-package Lesson_6;
+package lesson_6;
 
 /*
 Создать класс и объекты описывающие промежуток времени. Сам промежуток
@@ -10,46 +10,38 @@ package Lesson_6;
 * */
 public class Task_24 {
     public static void main(String[] args) {
-        Timer timer1 = new Timer(3600);
+        Timer timer1 = new Timer(3001);
         Timer timer2 = new Timer(0, 0, 1);
-        timer1.ShowData();
-        timer2.ShowData();
+        timer1.showData();
+        timer2.showData();
         System.out.println("Result of 2 objects comparison: " + timer1.CompareTimers(timer2));
-        System.out.println("Total number of seconds for the seconds object:" + timer2.SecondsCounter());
+        System.out.println("Total number of seconds for the seconds object:" + timer2.seconds);
     }
 }
 
 class Timer {
     int seconds;
-    int minutes;
-    int hours;
 
     public Timer(int seconds) {
         this.seconds = seconds;
     }
 
     public Timer(int seconds, int minutes, int hours) {
-        this.seconds = seconds;
-        this.minutes = minutes;
-        this.hours = hours;
-    }
-
-    public int SecondsCounter() {
-        int fullNumberOfSeconds = this.seconds + this.minutes * 60 + this.hours * 3600;
-        return fullNumberOfSeconds;
+        this.seconds = seconds + minutes * 60 + hours * 3600;
     }
 
     public int CompareTimers(Timer timer) {
-        if (this.SecondsCounter() > timer.SecondsCounter()) {
+        if (this.seconds > timer.seconds) {
             return 1;
-        } else if (this.SecondsCounter() == timer.SecondsCounter()) {
+        } else if (this.seconds == timer.seconds) {
             return 0;
         } else {
             return -1;
         }
     }
 
-    public void ShowData() {
-        System.out.println("Number Of Seconds: " + seconds + ", number of minutes: " + minutes + ", number of Hours: " + hours);
+    public void showData() {
+        System.out.println("Number of Hours:" + seconds/3600+"; Number of minutes:"+ ((seconds%3600)/60)+
+                        "; Number of seconds:" + ((seconds%3600)%60));
     }
 }

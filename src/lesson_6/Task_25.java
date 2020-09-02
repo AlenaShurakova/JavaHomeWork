@@ -1,4 +1,4 @@
-package Lesson_6;
+package lesson_6;
 
 /*
 * Создать класс и объекты описывающие Банкомат. Набор купюр находящихся в
@@ -29,14 +29,14 @@ public class Task_25 {
                 if (banknote20 < 0 || banknote50 < 0 || banknote100 < 0) {
                     System.out.println("Количество банкнот не может быть отрицательным числом!");
                 } else {
-                    belarussBankATM.PutMoney(banknote20, banknote50, banknote100);
+                    belarussBankATM.putMoney(banknote20, banknote50, banknote100);
                 }
             } else if (operationCode == 2) {
                 System.out.println("Введите сумму для снятия денег");
                 int sum = scanner.nextInt();
                 if (sum <= 0) {
                     System.out.println("Сумма должна быть больше 0");
-                } else if (belarussBankATM.WithDrawMoney(sum)) {
+                } else if (belarussBankATM.withDrawMoney(sum)) {
                     System.out.println("Деньги успешно списаны");
                 } else {
                     System.out.println("Что-то пошло не так...");
@@ -60,14 +60,14 @@ class ATM {
         this.banknote100 = banknote100;
     }
 
-    public void PutMoney(int banknote20, int banknote50, int banknote100) {
+    public void putMoney(int banknote20, int banknote50, int banknote100) {
         this.banknote20 = banknote20;
         this.banknote50 = banknote50;
         this.banknote100 = banknote100;
         System.out.println("Зачисление произошло успешно!");
     }
 
-    public boolean WithDrawMoney(int sum) {
+    public boolean withDrawMoney(int sum) {
         int banknote20ToBeWithdrawed = 0;
         int banknote50ToBeWithdrawed = 0;
         int banknote100ToBeWithdrawed = 0;

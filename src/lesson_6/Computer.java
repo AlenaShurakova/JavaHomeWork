@@ -1,31 +1,32 @@
-package Lesson_6;
+package lesson_6;
 
 import java.util.Scanner;
 
 class AsusComputer {
     public static void main(String[] args) {
         Computer asusComputer = new Computer("Intel Core i7", 4, 504, 5);
-        while (asusComputer.WorkingCircleResourse != 0) {
+        while (asusComputer.workingCircleResourse != 0) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Введите код операции, которую хотите выполнить: 1 - включить компьютер, 2 - выключить компьютер, 3 - вывести информацию о компьютере");
+            System.out.println("Введите код операции, которую хотите выполнить: 1 - включить компьютер, " +
+                    "2 - выключить компьютер, 3 - вывести информацию о компьютере");
             int inputtedOperationCode = scanner.nextInt();
             if (inputtedOperationCode == 3) {
-                asusComputer.ComputerDescription();
+                asusComputer.computerDescription();
             } else if (inputtedOperationCode == 1 || inputtedOperationCode == 2) {
-                if (inputtedOperationCode == 1 && !asusComputer.IsComputerOn) {
-                    asusComputer.TurnOnComputer();
-                } else if (inputtedOperationCode == 1 && asusComputer.IsComputerOn) {
+                if (inputtedOperationCode == 1 && !asusComputer.isComputerOn) {
+                    asusComputer.turnOnComputer();
+                } else if (inputtedOperationCode == 1 && asusComputer.isComputerOn) {
                     System.out.println("Компьютер уже включен!");
-                } else if (inputtedOperationCode == 2 && asusComputer.IsComputerOn) {
-                    asusComputer.TurnOffComputer();
-                } else if (inputtedOperationCode == 2 && !asusComputer.IsComputerOn) {
+                } else if (inputtedOperationCode == 2 && asusComputer.isComputerOn) {
+                    asusComputer.turnOffComputer();
+                } else if (inputtedOperationCode == 2 && !asusComputer.isComputerOn) {
                     System.out.println("Компьютер уже выключен!");
                 }
             } else {
                 System.out.println("Вы ввели некорретный код!");
             }
         }
-        if (asusComputer.WorkingCircleResourse == 0) {
+        if (asusComputer.workingCircleResourse == 0) {
             System.out.println("Компьютер сломался!");
         }
     }
@@ -33,27 +34,28 @@ class AsusComputer {
 
 class Computer {
     //процессор
-    String CPU;
+    String cpu;
     //Оперативная память
-    int RAM;
+    int ram;
     //Объем жесткого диска МБ
-    int HDD;
+    int hdd;
     //Ресурс полных циклов работы
-    int WorkingCircleResourse;
-    boolean IsComputerOn = false;
+    int workingCircleResourse;
+    boolean isComputerOn = false;
 
-    public Computer(String CPU, int RAM, int HDD, int WorkingCircleResource) {
-        this.CPU = CPU;
-        this.RAM = RAM;
-        this.HDD = HDD;
-        this.WorkingCircleResourse = WorkingCircleResource;
+    public Computer(String cpu, int ram, int hdd, int workingCircleResource) {
+        this.cpu = cpu;
+        this.ram = ram;
+        this.hdd = hdd;
+        this.workingCircleResourse = workingCircleResource;
     }
 
-    public void ComputerDescription() {
-        System.out.println("Процессор: " + this.CPU + ", Оперативная память (ГБ): " + this.RAM + ", Жесткий диск (МБ): " + this.HDD + ", Оставшийся ресурс полных циклов работы: " + this.WorkingCircleResourse);
+    public void computerDescription() {
+        System.out.println("Процессор: " + this.cpu + ", Оперативная память (ГБ): " + this.ram + ", Жесткий диск (МБ): "
+                + this.hdd + ", Оставшийся ресурс полных циклов работы: " + this.workingCircleResourse);
     }
 
-    public void TurnOnComputer() {
+    public void turnOnComputer() {
         System.out.println("Введите 0 или 1");
         Scanner scanner = new Scanner(System.in);
         int inputtedValue = scanner.nextInt();
@@ -64,14 +66,14 @@ class Computer {
         int randomValue = (int) (Math.random() * 2);
         if (inputtedValue == randomValue) {
             System.out.println("Включение прошло успешно!");
-            IsComputerOn = true;
+            isComputerOn = true;
         } else {
             System.out.println("Ууупс... Произошел сбой...");
-            this.WorkingCircleResourse--;
+            this.workingCircleResourse--;
         }
     }
 
-    public void TurnOffComputer() {
+    public void turnOffComputer() {
         System.out.println("Введите 0 или 1");
         Scanner scanner = new Scanner(System.in);
         int inputtedValue = scanner.nextInt();
@@ -82,10 +84,10 @@ class Computer {
         int randomValue = (int) (Math.random() * 2);
         if (inputtedValue == randomValue) {
             System.out.println("Выключение прошло успешно!");
-            IsComputerOn = false;
+            isComputerOn = false;
         } else {
             System.out.println("Ууупс... Произошел сбой...");
-            this.WorkingCircleResourse--;
+            this.workingCircleResourse--;
         }
     }
 }
