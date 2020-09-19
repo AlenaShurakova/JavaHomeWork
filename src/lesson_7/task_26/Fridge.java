@@ -1,6 +1,6 @@
 package lesson_7.task_26;
 
-public class Fridge extends Refrigiration_Equipment {
+public class Fridge extends RefrigirationEquipment {
     boolean isNoFrostIncluded;
     boolean isEggsTrayIncluded;
 

@@ -1,6 +1,6 @@
 package lesson_7.task_26;
 
-public abstract class Ironing_Equipment extends Household_Appliances {
+public abstract class IroningEquipment extends HouseholdAppliances {
     //мощность (Вт)
     int capacity;
     //скорость подачи пара (г/мин)
@@ -8,7 +8,7 @@ public abstract class Ironing_Equipment extends Household_Appliances {
     //объем резервуара для воды (мл)
     int waterReservsVolume;
 
-    public Ironing_Equipment(String maker, double price, double garantee, boolean isPluggedIn, int capacity, int powerFlowSpeed, int waterReservsVolume) {
+    public IroningEquipment(String maker, double price, double garantee, boolean isPluggedIn, int capacity, int powerFlowSpeed, int waterReservsVolume) {
         super(maker, price, garantee, isPluggedIn);
         this.capacity = capacity;
         this.powerFlowSpeed = powerFlowSpeed;

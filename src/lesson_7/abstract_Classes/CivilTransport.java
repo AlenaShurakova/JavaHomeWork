@@ -5,12 +5,12 @@ package lesson_7.abstract_Classes;
  - Наличие бизнес класса (true/false)
 */
 
-public class Civil_Transport extends Air_Transports {
+public class CivilTransport extends AirTransports {
     int passengersCapacity;
     boolean isBussinessClassIncluded;
 
-    public Civil_Transport(double capacity, double maxSpeed, double weight, String brand, double wingspan, int minRunway, int passengersCapacity,
-                           boolean isBussinessClassIncluded) {
+    public CivilTransport(double capacity, double maxSpeed, double weight, String brand, double wingspan, int minRunway, int passengersCapacity,
+                          boolean isBussinessClassIncluded) {
         super(capacity, maxSpeed, weight, brand, wingspan, minRunway);
         this.passengersCapacity = passengersCapacity;
         this.isBussinessClassIncluded = isBussinessClassIncluded;

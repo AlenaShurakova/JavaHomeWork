@@ -4,13 +4,13 @@ package lesson_7.task_26;
 объектов описанных классов, часть из них включить в розетку.
 Иерархия должна иметь хотя бы три уровня.*/
 
-public abstract class Household_Appliances {
+public abstract class HouseholdAppliances {
     String maker;
     double price;
     double garantee;
     boolean isPluggedIn = false;
 
-    public Household_Appliances(String maker, double price, double garantee, boolean isPluggedIn) {
+    public HouseholdAppliances(String maker, double price, double garantee, boolean isPluggedIn) {
         this.maker = maker;
         this.price = price;
         this.garantee = garantee;

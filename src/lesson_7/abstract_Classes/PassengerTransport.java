@@ -6,12 +6,12 @@ package lesson_7.abstract_Classes;
 - Кол-во пассажиров
 */
 
-public class Passenger_Transport extends Land_Transport {
+public class PassengerTransport extends LandTransport {
     String bodyType;
     int numberOfPassenghers;
 
-    public Passenger_Transport(double capacity, double maxSpeed, double weight, String brand, int numberOfWheels, double fuelConsumption,
-                               String bodyType, int numberOfPassenghers) {
+    public PassengerTransport(double capacity, double maxSpeed, double weight, String brand, int numberOfWheels, double fuelConsumption,
+                              String bodyType, int numberOfPassenghers) {
         super(capacity, maxSpeed, weight, brand, numberOfWheels, fuelConsumption);
         this.bodyType = bodyType;
         this.numberOfPassenghers = numberOfPassenghers;

@@ -8,7 +8,7 @@ public class CrewDragon implements IStart {
     }
 
     @Override
-    public boolean pre_startCheck() {
+    public boolean prestartCheck() {
         if (isElonMuskApproved) {
             return true;
         } else {

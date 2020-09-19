@@ -3,7 +3,7 @@ package lesson_7.interfaces.task_3;
 public class Shuttle implements IStart {
 
     @Override
-    public boolean pre_startCheck() {
+    public boolean prestartCheck() {
         if ((int) (Math.random() * 10) > 3) {
             return true;
         } else {

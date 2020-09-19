@@ -5,11 +5,11 @@ package lesson_7.abstract_Classes;
 - Грузоподъёмность(т)
 */
 
-public class Freight_Transport extends Land_Transport {
+public class FreightTransport extends LandTransport {
     double liftingCapacity;
 
-    public Freight_Transport(double capacity, double maxSpeed, double weight, String brand, int numberOfWheels, double fuelConsumption,
-                             double liftingCapacity) {
+    public FreightTransport(double capacity, double maxSpeed, double weight, String brand, int numberOfWheels, double fuelConsumption,
+                            double liftingCapacity) {
         super(capacity, maxSpeed, weight, brand, numberOfWheels, fuelConsumption);
         this.liftingCapacity = liftingCapacity;
     }
