@@ -5,11 +5,11 @@ package lesson_7.abstract_Classes;
  - Размах крыльев (м)
  - Минимальная длина взлётно-посадочной полосы для взлёта
 */
-public abstract class Air_Transports extends Transport {
+public abstract class AirTransports extends Transport {
     double wingspan;
     int minRunway;
 
-    public Air_Transports(double capacity, double maxSpeed, double weight, String brand, double wingspan, int minRunway) {
+    public AirTransports(double capacity, double maxSpeed, double weight, String brand, double wingspan, int minRunway) {
         super(capacity, maxSpeed, weight, brand);
         this.wingspan = wingspan;
         this.minRunway = minRunway;

@@ -1,6 +1,6 @@
 package lesson_7.task_26;
 
-public class Steamer extends Ironing_Equipment {
+public class Steamer extends IroningEquipment {
     boolean manual;
     //готовность пара (сек)
     int steamReadiness;

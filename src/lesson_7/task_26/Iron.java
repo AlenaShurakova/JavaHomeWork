@@ -1,6 +1,6 @@
 package lesson_7.task_26;
 
-public class Iron extends Ironing_Equipment {
+public class Iron extends IroningEquipment {
     //материал подошвы
     String outsoleMaterial;
 

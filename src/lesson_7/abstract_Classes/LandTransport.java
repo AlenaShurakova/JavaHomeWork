@@ -5,11 +5,11 @@ package lesson_7.abstract_Classes;
  - Расход топлива(л/100км)
 */
 
-public abstract class Land_Transport extends Transport {
+public abstract class LandTransport extends Transport {
     int numberOfWheels;
     double fuelConsumption;
 
-    public Land_Transport(double capacity, double maxSpeed, double weight, String brand, int numberOfWheels, double fuelConsumption) {
+    public LandTransport(double capacity, double maxSpeed, double weight, String brand, int numberOfWheels, double fuelConsumption) {
         super(capacity, maxSpeed, weight, brand);
         this.numberOfWheels = numberOfWheels;
         this.fuelConsumption = fuelConsumption;

@@ -4,7 +4,7 @@ package lesson_7.task_27;
 Иерархия должна иметь хотя бы три уровня.
 */
 
-public abstract class Bank_Card {
+public abstract class BankCard {
     String cvc;
     String number;
     String ownerFirstName;
@@ -18,8 +18,8 @@ public abstract class Bank_Card {
 
     boolean isContactLessPaymentsAllowed;
 
-    public Bank_Card(String cvc, String number, String ownerFirstName, String ownerLastName, paymentSystems paymentSystem,
-                     boolean isContactLessPaymentsAllowed) throws Exception {
+    public BankCard(String cvc, String number, String ownerFirstName, String ownerLastName, paymentSystems paymentSystem,
+                    boolean isContactLessPaymentsAllowed) throws Exception {
         setCvc(cvc);
         setNumber(number);
         this.ownerFirstName = ownerFirstName;

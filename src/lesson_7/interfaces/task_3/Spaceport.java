@@ -2,7 +2,7 @@ package lesson_7.interfaces.task_3;
 
 public class Spaceport {
     public void start(IStart start) {
-        if (!start.pre_startCheck()) {
+        if (!start.prestartCheck()) {
             System.out.println("Предстартовая проверка провалена.");
         } else {
             start.startEngine();

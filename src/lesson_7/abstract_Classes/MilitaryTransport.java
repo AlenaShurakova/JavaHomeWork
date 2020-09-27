@@ -6,12 +6,12 @@ package lesson_7.abstract_Classes;
 - Наличие системы катапультирования (true/false) - Кол-во ракет на борту
 */
 
-public class Military_Transport extends Air_Transports {
+public class MilitaryTransport extends AirTransports {
     boolean isBailoutIncluded;
     int numberOfRockets;
 
-    public Military_Transport(double capacity, double maxSpeed, double weight, String brand, double wingspan, int minRunway,
-                              boolean isBailoutIncluded, int numberOfRockets) {
+    public MilitaryTransport(double capacity, double maxSpeed, double weight, String brand, double wingspan, int minRunway,
+                             boolean isBailoutIncluded, int numberOfRockets) {
         super(capacity, maxSpeed, weight, brand, wingspan, minRunway);
         this.isBailoutIncluded = isBailoutIncluded;
         this.numberOfRockets = numberOfRockets;
