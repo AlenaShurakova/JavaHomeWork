@@ -16,12 +16,11 @@ public class Runner {
             marksList.add((int)(Math.random()*10));
         }
         System.out.println("Список всех оценок:" + marksList);
-        Iterator<Integer> iterator = marksList.iterator();
-        while (iterator.hasNext()) {
-            Integer s = iterator.next();
-            if (s.equals(0) || s.equals(1) || s.equals(2) || s.equals(3)) {
-                marksList.remove(s);
-                iterator = marksList.iterator();
+        int n = marksList.size();
+        for(Integer i=0; i<n; i++){
+            if (i>=0 && i<=3) {
+                marksList.remove(i);
+                n--;
             }
         }
         System.out.println("Cписок удовлетворительных оценок: " + marksList);

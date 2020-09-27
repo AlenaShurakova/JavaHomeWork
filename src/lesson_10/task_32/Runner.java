@@ -12,16 +12,12 @@ public class Runner {
         ArrayList<String> words = new ArrayList<String>(Arrays.asList(text.toLowerCase().replaceAll("\\p{Punct}+", " ").split("\\s+")));
         System.out.println("Список слов:" + words);
         Map<String, Integer> dictionary = new HashMap<>();
-        Iterator<String> iterator = words.iterator();
-        while (iterator.hasNext()) {
-            String nextElement = iterator.next();
-            Integer frequency = 0;
-            for (String s : words) {
-                if (nextElement.equals(s)) {
-                    frequency++;
-                }
+        for (String s : words) {
+            if (dictionary.keySet().contains(s)) {
+                dictionary.put(s,dictionary.get(s)+1);
+            } else {
+                dictionary.put(s, 1);
             }
-            dictionary.put(nextElement, frequency);
         }
         System.out.println(dictionary);
     }
