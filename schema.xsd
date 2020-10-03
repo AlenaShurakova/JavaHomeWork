@@ -1,0 +1,62 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="devices">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="device" type="deviceDescription" minOccurs="1" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="deviceDescription">
+        <xsd:sequence>
+            <xsd:element name="commonDescription" type="commonDescriptionType" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="detailedDescription" type="detailedDescriptionType" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:ID"/>
+    </xsd:complexType>
+    <xsd:complexType name="commonDescriptionType">
+        <xsd:sequence>
+            <xsd:element name="name">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="50"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="origin">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="20"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="price" type="xsd:decimal"/>
+            <xsd:element name="type">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="Monitor"/>
+                        <xsd:enumeration value="Mouse"/>
+                        <xsd:enumeration value="Keyboard"/>
+                        <xsd:enumeration value="System Block"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="detailedDescriptionType">
+        <xsd:sequence>
+            <xsd:element name="isPeripheral" type="xsd:boolean"/>
+            <xsd:element name="energyConsumption" type="xsd:decimal"/>
+            <xsd:element name="isCoolerIncluded" type="xsd:boolean"/>
+            <xsd:element name="detailsGroup" type="xsd:string"/>
+            <xsd:element name="port" maxOccurs="unbounded">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="USB"/>
+                        <xsd:enumeration value="LPT"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="isCritical" type="xsd:boolean"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
