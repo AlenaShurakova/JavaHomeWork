@@ -5,6 +5,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.stream.StreamSource;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 
 import static javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI;
 
-public class DomXMLReader {
+public class XMLReader {
     public static String bookXmlPath = "books.xml";
     public static String bookXsdPath = "booksSchema.xsd";
 
