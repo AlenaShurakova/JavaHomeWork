@@ -13,7 +13,7 @@ public class Runner {
         Visitor ivan = new Visitor("Иван Иванов");
         Library nationalLibrary = new Library();
         alena.takeBook("Вино из одуванчиков", nationalLibrary, false);
-        ivan.takeBook("Вино из одуванчиков", nationalLibrary, false);
         alena.takeBook("Атлант расправил плечи", nationalLibrary, true);
+        ivan.takeBook("Вино из одуванчиков", nationalLibrary, false);
     }
 }
