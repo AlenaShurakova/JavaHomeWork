@@ -11,22 +11,14 @@ import java.util.Arrays;
 
 public class Runner {
     public static void main(String[] args) throws IOException {
-        BufferedWriter bw = null;
         String textToWrite = "Hello, World!";
-        File task33 = new File("src\\lesson_12\\task_33", "task33.txt");
-        try {
-            bw = new BufferedWriter(new FileWriter(task33));
+        File task33 = new File("task33.txt");
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(task33));) {
             bw.write(textToWrite);
         } catch (IOException ex) {
             System.out.print(ex.getMessage());
-        } finally {
-            if (bw != null) {
-                bw.close();
-            }
         }
-        BufferedReader br = null;
-        try {
-            br = new BufferedReader(new FileReader(task33));
+        try (BufferedReader br = new BufferedReader(new FileReader(task33));) {
             String textInDocument = "";
             String lineInDocument;
             while ((lineInDocument = br.readLine()) != null) {
@@ -37,10 +29,6 @@ public class Runner {
             System.out.println("Number of punctuation symbols: " + getNumberOfPunctSymbolsInText(textInDocument));
         } catch (IOException e) {
             System.out.print(e.getMessage());
-        } finally {
-            if (br != null) {
-                br.close();
-            }
         }
     }
 

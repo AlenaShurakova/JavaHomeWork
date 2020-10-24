@@ -11,16 +11,15 @@ import java.util.ArrayList;
 
 public class Runner {
     public static void main(String[] args) throws IOException {
-        File initialFile = new File("src\\lesson_12\\additonalTask\\task_1", "textFile.txt");
+        File initialFile = new File("textFilel12task1.txt");
         ArrayList<String> palindromeWords = getPalindromeWords(initialFile);
         writePolindromsToFile(palindromeWords);
     }
 
     private static ArrayList<String> getPalindromeWords(File file) throws IOException {
-        BufferedReader br = null;
         ArrayList<String> wordsList = new ArrayList<>();
-        try {
-            br = new BufferedReader(new FileReader(file));
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            new BufferedReader(new FileReader(file));
             String line = br.readLine();
             while (line != null) {
                 if (isWordPalindrome(line)) {
@@ -32,10 +31,6 @@ public class Runner {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (br != null) {
-                br.close();
-            }
         }
         return wordsList;
     }
@@ -52,18 +47,13 @@ public class Runner {
     }
 
     private static void writePolindromsToFile(ArrayList<String> wordsList) throws IOException {
-        BufferedWriter bw = null;
-        try {
-            bw = new BufferedWriter(new FileWriter(new File("src\\lesson_12\\additonalTask\\task_1", "fileWithPolindroms.txt")));
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File("fileWithPolindroms.txt")));) {
             for (String word : wordsList) {
                 bw.write(word + "\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (bw != null) {
-                bw.close();
-            }
         }
     }
 }

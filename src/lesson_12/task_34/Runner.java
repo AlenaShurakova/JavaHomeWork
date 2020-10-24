@@ -12,22 +12,14 @@ import java.util.regex.Pattern;
 
 public class Runner {
     public static void main(String[] args) throws IOException {
-        BufferedWriter bw = null;
-        File task34 = new File("src\\lesson_12\\task_34", "task34.txt");
+        File task34 = new File("task34.txt");
         String stringToWrite = "String1, String2, String3, String4,\n" + " String4";
-        try {
-            bw = new BufferedWriter(new FileWriter(task34));
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(task34));) {
             bw.write(stringToWrite);
         } catch (IOException ex) {
             System.out.print(ex.getMessage());
-        } finally {
-            if (bw != null) {
-                bw.close();
-            }
         }
-        BufferedReader br = null;
-        try {
-            br = new BufferedReader(new FileReader(task34));
+        try (BufferedReader br = new BufferedReader(new FileReader(task34))) {
             String textInDocument = "";
             String lineInDocument;
             while ((lineInDocument = br.readLine()) != null) {
@@ -39,10 +31,6 @@ public class Runner {
             System.out.println("Unique numbers: " + getListOfUniqueNumbers(listOfNumbers));
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (br != null) {
-                br.close();
-            }
         }
     }
 

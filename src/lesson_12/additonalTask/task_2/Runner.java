@@ -22,15 +22,13 @@ import java.util.ArrayList;
 
 public class Runner {
     public static void main(String[] args) throws IOException {
-        File initialFile = new File("src\\lesson_12\\additonalTask\\task_2", "initialFile.txt");
+        File initialFile = new File("initialFile.txt");
         writeSentencesToFile(getSuitableSentences(initialFile));
     }
 
     private static ArrayList<String> getSuitableSentences(File file) throws IOException {
-        BufferedReader br = null;
         String allTextFromFile = "";
-        try {
-            br = new BufferedReader(new FileReader(file));
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line = br.readLine();
             while (line != null) {
                 allTextFromFile += line;
@@ -40,10 +38,6 @@ public class Runner {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (br != null) {
-                br.close();
-            }
         }
         ArrayList<String> listOfSentences = new ArrayList<>();
         for (String s : allTextFromFile.split("(\\.+)|(\\!+)|(\\?+)")) {
@@ -60,18 +54,12 @@ public class Runner {
     }
 
     private static void writeSentencesToFile(ArrayList<String> listOfSentences) throws IOException {
-        BufferedWriter bw = null;
-        try {
-            bw = new BufferedWriter(new FileWriter(new File("src\\lesson_12\\additonalTask\\task_2", "filteredSentences.txt")));
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File("filteredSentences.txt")))){
             for (String s : listOfSentences) {
                 bw.write(s + "\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (bw != null) {
-                bw.close();
-            }
         }
     }
 }

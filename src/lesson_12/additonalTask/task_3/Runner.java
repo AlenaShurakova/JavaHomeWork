@@ -20,8 +20,8 @@ import java.util.ArrayList;
 
 public class Runner {
     public static void main(String[] args) throws IOException {
-        File blackListedWordsFile = new File("src\\lesson_12\\additonalTask\\task_3", "blackList.txt");
-        File textFile = new File("src\\lesson_12\\additonalTask\\task_3", "businessLetter.txt");
+        File blackListedWordsFile = new File("blackList.txt");
+        File textFile = new File("businessLetter.txt");
         censorChecker(textFile, blackListedWordsFile);
     }
 
@@ -41,11 +41,9 @@ public class Runner {
     }
 
     private static ArrayList<String> getListOfSentencesInText(File file) throws IOException {
-        BufferedReader br = null;
         ArrayList<String> listOfSentences = new ArrayList<>();
         String textOfFile = "";
-        try {
-            br = new BufferedReader(new FileReader(file));
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line = br.readLine();
             while (line != null) {
                 textOfFile += line;
@@ -53,10 +51,6 @@ public class Runner {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } finally {
-            if (br != null) {
-                br.close();
-            }
         }
         for (String s : textOfFile.split("(\\.+)|(\\!+)|(\\?+)")) {
             listOfSentences.add(s);
