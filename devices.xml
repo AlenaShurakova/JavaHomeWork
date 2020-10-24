@@ -1,0 +1,36 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<devices>
+    <device id="n1">
+        <commonDescription>
+            <name>HP Monitor HR100</name>
+            <origin>Belarus</origin>
+            <price>1000</price>
+            <type>Monitor</type>
+        </commonDescription>
+        <detailedDescription>
+            <isPeripheral>false</isPeripheral>
+            <energyConsumption>40</energyConsumption>
+            <isCoolerIncluded>false</isCoolerIncluded>
+            <detailsGroup>Multimedia</detailsGroup>
+            <port>USB</port>
+            <port>LPT</port>
+            <isCritical>true</isCritical>
+        </detailedDescription>
+    </device>
+        <device id="r2">
+            <commonDescription>
+                <name>Mouse Computer Logitech</name>
+                <origin>USA</origin>
+                <price>50.5</price>
+                <type>Mouse</type>
+            </commonDescription>
+            <detailedDescription>
+                <isPeripheral>true</isPeripheral>
+                <energyConsumption>2</energyConsumption>
+                <isCoolerIncluded>false</isCoolerIncluded>
+                <detailsGroup>Input-Output</detailsGroup>
+                <port>USB</port>
+                <isCritical>false</isCritical>
+            </detailedDescription>
+        </device>
+</devices>
