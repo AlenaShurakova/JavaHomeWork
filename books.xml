@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<books>
+    <book>
+        <title>Гарри Поттер и филосовский камень</title>
+        <author>Джоан Роулинг</author>
+        <genre>Фантастика</genre>
+        <canBeReadAtHome>true</canBeReadAtHome>
+    </book>
+    <book>
+        <title>Атлант расправил плечи</title>
+        <author>Айн Рэнд</author>
+        <genre>Роман</genre>
+        <canBeReadAtHome>true</canBeReadAtHome>
+    </book>
+    <book>
+        <title>Вино из одуванчиков</title>
+        <author>Рэй Бредбери</author>
+        <genre>Роман</genre>
+        <canBeReadAtHome>false</canBeReadAtHome>
+    </book>
+</books>
